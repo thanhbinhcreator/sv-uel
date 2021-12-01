@@ -1,1 +1,1 @@
-Trang quản lý thông tin Sinh viên  UEL
+Trang quản lý thông tin Sinh viên  Nhóm Bootcamp
