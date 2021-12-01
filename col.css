@@ -1,0 +1,16 @@
+.col-stt {
+  min-width: 80px;
+  text-align: center;
+}
+.col-name {
+  min-width: 200px;
+}
+.col-email {
+  min-width: 270px;
+}
+.col-action {
+  min-width: 150px;
+  /* text-align: center; */
+  /* display: flex; */
+  text-align: center;
+}
