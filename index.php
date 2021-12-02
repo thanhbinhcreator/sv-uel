@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <?php
 // Create connection
-$conn = mysqli_connect('localhost', 'root','','tracuu_sinhvien');
-//Chuyển tiếng Việt
-mysqli_set_charset($conn, 'UTF8'); 
-// Trỏ đến bảng thongtinSV lấy các cột
+require_once('./getDB/connect_db.php');
 $getStudents = "SELECT MSSV, HoVaTen, Email FROM thongtinsv";
 $students = $conn->query($getStudents);
 ?>
@@ -63,7 +60,7 @@ $students = $conn->query($getStudents);
                         </span>
                         <span class="item-email col-email"><?php echo $st["Email"] ?></span>
                         <span class="view-detail col-action">
-                            <a href="#info-list?" class="btn-view col-action">
+                            <a href="xemdulieu.php?MSSV=<?php echo $st['MSSV']. '&Name=' .$st['HoVaTen'].'&Email=' .$st['Email'] ;?>" type="submit" class="btn-view col-action" target="_blank">
                                 Chi tiết
                             </a>
                         </span>
@@ -75,64 +72,22 @@ $students = $conn->query($getStudents);
          
         </div>
         <div class="info-div">
-
-            <div class="info-nolist  active"><img class="img-error" name="frameInfo" src="./Resources/oops.svg"
-                    style="border: 0px;"> </img></div>
-            <div class="info-list">
-                <div class="info-class">
-                    <div class="img-student">
-                     
-                        <img class="img-student__item"                  
-                            src="" alt="">
-                    </div>
-                    <div class="info-class__list">
-                        <span class="info-list_heading">Họ và tên:</span><span class="info-list_name">Ngô Song Tuyết
-                            Ngân</span><br>
-                        <span class="info-list_heading">MSSV:</span><span class="info-list_mssv">K204061426</span><br>
-                        <span class="info-list_heading">Email:</span><span
-                            class="info-list_name">ngannst20406c@st.uel.edu.vn</span><br>
-                        <span class="info-list_heading">Niên khoá:</span><span
-                            class="info-list_name">2020-2024</span><br>
-                        <span class="info-list_heading">Chuyên ngành:</span><span class="info-list_name">Hệ thống thông
-                            tin quản lý chất lượng cao</span><br>
-
-                    </div>
+       <!-- <iframe src="xemdulieu.php" frameborder="0" width="100%" height="100%"></iframe> -->
+       
+       <div class="info-nolist active" >
+       <img class="img-error" name="frameInfo" src="./Resources/hello.svg"
+                    style="border: 0px;"> 
+                </img><br>
+                <p class="info-desc">Hello, what are you thinking?</p>
                 </div>
-                <div class="info-contact">
-                    <h3 class="contact-heading">Thông tin liên hệ</h3>
-                    <div class="contact-detail">
-                        <span class="info-list_heading">Ngày sinh:</span><span
-                            class="info-list_name">01/01/2002</span><br>
-                        <span class="info-list_heading">CMND/CCCD:</span><span
-                            class="info-list_name">215522223</span><br>
-                        <span class="info-list_heading">Số điện thoại:</span><span
-                            class="info-list_name">0968213999</span><br>
-                        <span class="info-list_heading">Quê quán:</span><span class="info-list_name">699, QL1A, P. Linh
-                            Xuân, Thủ Đức, TP.HCM</span><br>
-                        <span class="info-list_heading">Địa chỉ tạm trú:</span><span class="info-list_name">699, QL1A,
-                            P.
-                            Linh
-                            Xuân, Thủ Đức, TP.HCM</span><br>
-                        <span class="info-list_heading">Họ và tên cha:</span><span class="info-list_name">Trần Văn
-                            X</span><br>
-                        <span class="info-list_heading">Họ và tên mẹ:</span><span class="info-list_name">Nguyễn Thị
-                            Y</span><br>
-                        <span class="info-list_heading">SĐT người giám hộ:</span><span
-                            class="info-list_name">099992323</span>
-                    </div>
-                    <div class="info-action">
-                        <a href="" class="btn-delete">Xoá</a>
-                        <div class="info-action__request">
-                            <a href="" class="btn-edit">Chỉnh sửa</a>
-                            <a href="" class="btn-save">Lưu</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    <!-- list -->
+                    
+            <!-- list -->
+            
         </div>
     </div>
 </body>
-<script src="./handler-btn.js"></script>
+<!-- <script src="./handler-btn.js"></script> -->
 </html>
 <?php
 $conn->close();
